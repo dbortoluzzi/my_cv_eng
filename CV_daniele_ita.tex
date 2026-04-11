@@ -37,7 +37,7 @@
 %----------------------------------------------------------------------------------------
 
 % we use utf8 since we want to build from any machine
-\usepackage[utf8]{inputenc}		
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
@@ -64,6 +64,7 @@
 % set font default
 \renewcommand*\familydefault{\sfdefault} 	
 \usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
 
 % more font size definitions
 \usepackage{moresize}
@@ -121,6 +122,11 @@
 
 % remove all possible margins
 \geometry{top=1cm, bottom=1cm, left=1cm, right=1cm}
+
+% microtipografia: meno righe che sforano nel PDF
+\usepackage{microtype}
+% un po' più di tolleranza sullo spazio inter-parola nelle colonne strette
+\setlength{\emergencystretch}{2.5em}
 
 \usepackage{fancyhdr}
 \pagestyle{empty}
@@ -246,7 +252,7 @@
 % param 1: name of the skill / tech / etc.
 % param 2: level (for example in years)
 % param 3: percent, values range from 0 to 1
-% Name + bar stay in one vertical block so the bar is not read as belonging to the next skill.
+% Nome e barra nello stesso blocco (stesso layout del CV in inglese).
 \newcommand{\cvskill}[3] {%
 	\par\addvspace{4pt}%
 	\noindent
@@ -290,7 +296,7 @@
     \parbox{\mpwidth}{
     \ifthenelse{\isempty{#6}}{}{
         \vspace{4pt}
-        \cvtext{\textbf{Technologies include:}}%\\
+        \cvtext{\textbf{Tecnologie:}}%\\
         {#6}
     }
     }
@@ -298,7 +304,7 @@
     \parbox{\mpwidth}{
     \ifthenelse{\isempty{#7}}{}{
         \vspace{4pt}
-        \cvtext{\textbf{Achievements include:}}%\\
+        \cvtext{\textbf{Risultati:}}%\\
         {#7}
     }
     }
@@ -366,11 +372,11 @@
 \includegraphics[width=\linewidth]{profile.jpg}	%trimming relative to image size
 
 %---------------------------------------------------------------------------------------
-%	CONTACT (sotto la foto: in cima alla colonna prima delle skill)
+%	CONTATTI (sotto la foto, prima delle competenze)
 %---------------------------------------------------------------------------------------
-\cvsection{CONTACT}
+\cvsection{CONTATTI}
 
-\icontext{MapMarker}{12}{Avigliana (TO), Italy}{black}\\[4pt]
+\icontext{MapMarker}{12}{Avigliana (TO), Italia}{black}\\[4pt]
 \icontext{MobilePhone}{12}{338-9904630}{black}\\[4pt]
 \iconemail{Envelope}{12}{danieleb88@gmail.com}{danieleb88@gmail.com}{black}\\[4pt]
 \iconhref{Github}{12}{github.com/dbortoluzzi}{https://github.com/dbortoluzzi}{black}\\[4pt]
@@ -380,31 +386,31 @@
 
 %---------------------------------------------------------------------------------------
 %	META SKILLS
-%----------------------------------------------------------------------------------------
-\cvsection{SKILLS}
+%---------------------------------------------------------------------------------------
+\cvsection{COMPETENZE}
 
-\cvskill{Java} {10+ yrs} {1.0}
-\cvskill{Spring Framework} {10+ yrs} {0.9}
-\cvskill{Quarkus} {2+ yrs} {0.8}
-\cvskill{Scala} {5+ yrs} {0.9}
-\cvskill{Kubernetes} {4+ yrs} {0.8}
-\cvskill{AWS} {3+ yrs} {0.75}
-\cvskill{Terraform} {2+ yrs} {0.75}
-\cvskill{Linux} {10+ yrs} {1.0}
-\cvskill{Python} {5+ yrs} {0.8}
-\cvskill{TypeScript} {5+ yrs} {0.8}
-\cvskill{C++} {3+ yrs} {0.8}
-\cvskill{ROS2} {2+ yrs} {0.7}
+\cvskill{Java} {10+ anni} {1.0}
+\cvskill{Spring Framework} {10+ anni} {0.9}
+\cvskill{Quarkus} {2+ anni} {0.8}
+\cvskill{Scala} {5+ anni} {0.9}
+\cvskill{Kubernetes} {4+ anni} {0.8}
+\cvskill{AWS} {3+ anni} {0.75}
+\cvskill{Terraform} {2+ anni} {0.75}
+\cvskill{Linux} {10+ anni} {1.0}
+\cvskill{Python} {5+ anni} {0.8}
+\cvskill{TypeScript} {5+ anni} {0.8}
+\cvskill{C++} {3+ anni} {0.8}
+\cvskill{ROS2} {2+ anni} {0.7}
 
 \vspace{8pt}
-\cvskill{Teamwork} {10+ yrs} {1.0}
-\cvskill{Problem-solving} {10+ yrs} {0.9}
-\cvskill{Mentoring} {10+ yrs} {0.9}
-\cvskill{Leadership} {5+ yrs} {0.9}
-\cvskill{Innovation} {10+ yrs} {0.9}
-\cvskill{Decision-making} {5+ yrs} {0.8}
-\cvskill{Communication} {2+ yrs} {0.8}
-\cvskill{Negotiation} {2+ yrs} {0.6}
+\cvskill{Lavoro di squadra} {10+ anni} {1.0}
+\cvskill{Risoluzione di problemi} {10+ anni} {0.9}
+\cvskill{Mentoring / tutoraggio} {10+ anni} {0.9}
+\cvskill{Leadership di team} {5+ anni} {0.9}
+\cvskill{Innovazione} {10+ anni} {0.9}
+\cvskill{Capacità decisionale} {5+ anni} {0.8}
+\cvskill{Comunicazione} {2+ anni} {0.8}
+\cvskill{Negoziazione} {2+ anni} {0.6}
 
 \vfill\null
 
@@ -413,45 +419,35 @@
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \newpage
-\cvsection{EDUCATION}
+\cvsection{ISTRUZIONE}
 
 \cvmetaevent
 {09/2013 -- 07/2022}
-{Master's Degree in Computer Science (Level 7 EQF)}
-{University of Turin}
-{Graduation grade: \emph{110/110 with honors and dignity of publication}.}
+{Laurea Magistrale in Informatica (Livello 7 EQF)}
+{Università di Torino}
+{Voto di laurea: \emph{110/110 con lode e dignità di stampa}.}
 
 \cvmetaevent
 {09/2007 -- 06/2011}
-{Bachelor's Degree in Computer Science (Level 6 EQF)}
-{Ca' Foscari University of Venice}
-{Graduation grade: \emph{104/110}.}
+{Laurea Triennale in Informatica (Livello 6 EQF)}
+{Università Ca' Foscari di Venezia}
+{Voto di laurea: \emph{104/110}.}
 
 \cvmetaevent
 {09/2002 -- 06/2007}
-{Scientific High School Diploma}
+{Diploma di Liceo Scientifico}
 {Liceo Scientifico Statale “G. Marconi” di Conegliano (TV)}
-{National Plan for Informatics.\\
-Final grade: 90/100.}
+{Piano Nazionale per l'Informatica.\\
+Voto finale: 90/100.}
 
-%\vfill\null
-
-
-%---------------------------------------------------------------------------------------
-%	CERTIFICATIONS
-%----------------------------------------------------------------------------------------
-%\newpage
-%\cvsection{CERTIFICATIONS}
-%% -- Add your certifications here if needed --
-
-%\vfill
+\vfill\null
 
 %---------------------------------------------------------------------------------------
-%	PUBLICATIONS
+%	PUBBLICAZIONI
 %----------------------------------------------------------------------------------------
 
-\cvsection{PUBLICATIONS}
-% Ordine decrescente per anno (più recente in cima). Stesso anno: prima il contributo più recente.
+\cvsection{PUBBLICAZIONI}
+% Stesso ordine e contenuti bibliografici del CV in inglese (titoli di lavori internazionali in inglese).
 
 \cvtext{
 \textbf{G. Audrito, A. Basso, D. Bortoluzzi, F. Damiani, G. Scarso, G. Torta.} \\
@@ -486,207 +482,199 @@ the 15th European Conference on Precision Agriculture, 2024, Barcelona (Spain)
 \vspace{10pt}
 
 \cvtext{
-\textbf{A. Basso, D. Bortoluzzi and G. Torta.} \\
-"Implementation of an IoT Wearable Prototype on a Standard AI Architecture," 2022 IEEE Intl Conf on Dependable, Autonomic and Secure Computing, Intl Conf on Pervasive Intelligence and Computing, Intl Conf on Cloud and Big Data Computing, Intl Conf on Cyber Science and Technology Congress (DASC / PiCom / CBDCom / CyberSciTech), Falerna, Italy, 2022, pp. 1-5
+\textbf{A. Basso, D. Bortoluzzi e G. Torta.} \\
+``Implementazione di un prototipo IoT indossabile su un'architettura AI standard'', 2022 IEEE International Conference on Dependable, Autonomic and Secure Computing (DASC), Pervasive Intelligence and Computing (PiCom), Cloud and Big Data Computing (CBDCom), Cyber Science and Technology (CyberSciTech), Falerna, Italia, 2022, pp.~1--5
 }
 
 \vspace{10pt}
 
 \cvtext{
-\textbf{A. Basso, D. Bortoluzzi, G.Torta, D. Pau, L. Chariglione, F. Damiani.} \\
-"Architecture standardization for AI deployment on tiny micro-controllers", \\
-Proc. of the 12th IEEE Int. Conf. on Consumer Technology, 2-6 September 2022, Berlin (Germany)
+\textbf{A. Basso, D. Bortoluzzi, G. Torta, D. Pau, L. Chariglione, F. Damiani.} \\
+``Standardizzazione dell'architettura per il deployment di AI su microcontrollori'', \\
+Proc.\ della 12\textsuperscript{a} IEEE Int.\ Conf.\ sulla Tecnologia Consumer, 2--6 settembre 2022, Berlino (Germania)
 }
 
 \vfill
 
-
 \end{leftcolumn}
 \begin{rightcolumn}
+
 %---------------------------------------------------------------------------------------
-%	TITLE  HEADER
+%	TITOLO
 %----------------------------------------------------------------------------------------
 \fcolorbox{white}{darkcol}{\begin{minipage}[c][3.5cm][c]{1\mpwidth}
 	\begin {center}
 		\HUGE{ \textbf{ \textcolor{white}{ \uppercase{DANIELE BORTOLUZZI} } } } \\[-24pt]
 		\textcolor{white}{ \rule{0.1\textwidth}{1.25pt} } \\[4pt]
-		\large{ \textcolor{white} {Software and IoT Architect / R\&D} }
+		\large{ \textcolor{white} {Architetto Software e IoT / R\&D} }
 	\end {center}
 \end{minipage}} \\[14pt]
 \vspace{-12pt}
 
 %---------------------------------------------------------------------------------------
-%	PROFILE
+%	PROFILO
 %----------------------------------------------------------------------------------------
-%\vfill\null
 \vspace{8pt}
-\cvsection{PROFILE}
+\cvsection{PROFILO}
 
-\cvtext{\textbf{15 years} of experience from design through production: cloud-native backends, data and AI in production, AWS/Terraform---with team leadership, turnkey delivery, and mentoring.\\[7pt]
-I \textbf{lecture} on cloud and distributed systems---containers, microservices, Spring/Spring Cloud, Docker, Kubernetes, and OpenStack---for universities and partner programmes. One current engagement is the University of Turin's Master's in Cloud Computing (COREP); I am open to guest lectures, modules, and corporate training at other institutions as well.\\[7pt]
-Alongside client work, I keep an active \textbf{research} thread in swarm intelligence and IoT, with \emph{rovers}, \emph{drones}, and embedded prototypes tied to experiments and field deployments.}
+\cvtext{\textbf{15 anni} su progetti articolati---dalla definizione dell'architettura al rilascio in esercizio---con \emph{stack} cloud-native, piattaforme dati, intelligenza artificiale applicata, ambienti AWS e infrastruttura gestita con Terraform.\\ Ho ricoperto ruoli di referente tecnico, coordinamento del team, consegna \emph{chiavi in mano} e affiancamento costante a sviluppatori e committenti.\\[7pt]
+Mi occupo anche di \textbf{docenza} su cloud e sistemi distribuiti: container, microservizi, Spring e Spring Cloud, Docker, Kubernetes e OpenStack, in master e percorsi con atenei e partner. In questo periodo insegno nel \href{https://www.mastercloudcomputing.it/}{Master in Cloud Computing} dell'\textbf{Università di Torino} con COREP; valuto altri incarini formativi (seminari, moduli, formazione in azienda) anche fuori da quel contesto.\\[7pt]
+Affianco a questo una \textbf{ricerca} ancora operativa su swarm intelligence e IoT, con attività su \emph{rover}, \emph{droni} e sistemi \emph{embedded}, tra laboratorio e sperimentazione sul campo.}
 
 %---------------------------------------------------------------------------------------
-%	WORK EXPERIENCE
+%	ESPERIENZA LAVORATIVA
 %----------------------------------------------------------------------------------------
 \vspace{16pt}
-\cvsection{WORK EXPERIENCE}
+\cvsection{LAVORO}
 
 \cvevent
-{03/2025 -- now}
-{Freelance IT Consultant}
-{Remote, Turin}
-{Independent consultant: \underline{software architecture}, \underline{turnkey delivery}, \underline{team leadership}, and \underline{mentoring} for clients building cloud-native platforms, data products, and \underline{AI-driven industrial solutions} (including \underline{Agriculture~4.0}).}
+{03/2025 -- oggi}
+{Consulente IT freelance}
+{Remoto, Torino}
+{Consulente indipendente: \underline{architettura software}, \underline{consegna chiavi in mano}, coordinamento del team e \underline{mentoring} su piattaforme cloud-native, prodotti dati e soluzioni industriali con \underline{AI} (inclusa l'\underline{Agriculture~4.0}).}
 {\cvlist{
-	\item \underline{Microservice architectures} (independent services with \underline{Quarkus}), \underline{React} front ends consuming those APIs, and integration across distributed components.
-	\item \underline{Data ingestion} pipelines and \underline{dashboards} for monitoring, exploration, and operational use of large datasets.
-	\item \underline{Deployment on AWS} and infrastructure-as-code: provisioning environments and machines with \underline{Terraform}.
-	\item \underline{AI} projects for \underline{data analysis} and \underline{computer vision} applied to \underline{Agriculture~4.0} use cases.
+	\item \underline{Architetture a microservizi} (servizi indipendenti con \underline{Quarkus}), interfacce \underline{React} che consumano le API, e integrazione tra componenti distribuiti.
+	\item \underline{Pipeline di ingestion dati} e \underline{dashboard} per monitoraggio, esplorazione e uso operativo di grandi dataset.
+	\item \underline{Deploy su AWS} e infrastruttura as code: provisioning di ambienti e macchine con \underline{Terraform}.
+	\item Progetti di \underline{AI} per \underline{analisi dati} e \underline{computer vision} applicati a casi d'uso \underline{Agriculture~4.0}.
 }}
 {\cvlist{
-	\item \underline{Quarkus}, \underline{React} (TypeScript), microservices, \underline{Redis}, \underline{AWS}, \underline{Terraform}, Python (AI and data).
+	\item \underline{Quarkus}, \underline{React} (TypeScript), microservizi, \underline{Redis}, \underline{AWS}, \underline{Terraform}, Python (AI e dati).
 }}
 {\cvlist{
-	\item Acting as \underline{team leader}, \underline{software architect}, and hands-on engineer on \underline{turnkey} engagements.
-	\item \underline{Mentoring} developers and customer teams through design, implementation, and production rollout.
+	\item \underline{Team leader}, \underline{architetto software} e ingegnere operativo in incarichi \underline{chiavi in mano}.
+	\item \underline{Mentoring} di sviluppatori e team di progetto lungo tutto il ciclo: progettazione, implementazione e messa in produzione.
 }}
 
 \cvevent
 {11/2025 -- 04/2026}
-{Contract Lecturer}
-{COREP (Turin)}
-{Teaching on site for the \href{https://www.mastercloudcomputing.it/}{Master's Program in Cloud Computing for Artificial Intelligence and Internet of Things}, a \underline{first-level university master's degree} of the \underline{University of Turin}, organized with COREP.}
+{Docente a contratto}
+{COREP (Torino)}
+{Didattica in presenza per il \href{https://www.mastercloudcomputing.it/}{Master in Cloud Computing} (IA e Internet delle cose), \underline{master universitario di I livello} dell'\underline{Università di Torino}, con COREP.}
 {\cvlist{
-	\item Led the course ``Containerization and Virtualization Platforms''.
-	\item Covered \underline{Spring Boot}, \underline{microservices}, \underline{Docker}, \underline{Kubernetes}, and OpenStack.
+	\item Corso tenuto: ``Containerization and Virtualization Platforms'' (piattaforme di containerizzazione e virtualizzazione).
+	\item Argomenti trattati: \underline{Spring Boot}, \underline{microservizi}, \underline{Docker}, \underline{Kubernetes} e OpenStack.
 }}
 {\cvlist{
-	\item \underline{Spring Boot}, microservices, \underline{Docker}, \underline{Kubernetes}, OpenStack, Java.
+	\item \underline{Spring Boot}, microservizi, \underline{Docker}, \underline{Kubernetes}, OpenStack, Java.
 }}
 {}
 
 \cvevent
 {03/2023 -- 02/2025}
-{Research Fellow}
-{University of Turin, Department of Computer Science}
-{Within the MoVeRe research group at the University of Turin, I conduct research activities related to the \underline{Aggregate Programming} paradigm, which allows leveraging \underline{coordination} between heterogeneous entities.}
+{Assegnista di ricerca}
+{Università di Torino, Dipartimento di Informatica}
+{Nel gruppo MoVeRe dell'Università di Torino conduco ricerca sul paradigma di \underline{Programmazione aggregata}, per la \underline{coordinazione} tra entità eterogenee.}
 {\cvlist{
-	\item Participation in the PRIN 2020 project named \underline{COMMON-WEARS}.
-	\item Collaboration in the organization and development of verticalizations and PoC in the \underline{Smart Mobility} and \underline{Industry 4.0} sectors.
-	\item Teaching support activities for the courses “Web Technologies” and “Programming for mobile devices”.
+	\item Partecipazione al progetto PRIN 2020 \underline{COMMON-WEARS}.
+	\item Collaborazione su verticalizzazioni e PoC in \underline{Smart Mobility} e \underline{Industria 4.0}.
+	\item Supporto didattico ai corsi ``Tecnologie Web'' e ``Programmazione per dispositivi mobili''.
 }}
 {\cvlist{
 	\item \underline{ROS2} (Python, C++), \underline{Gazebo} (Python), Zephyr (C, C++), Arduino (C), Spring Boot (Java), Angular (TypeScript).
 }}
 {\cvlist{
-	\item A new \underline{platform} for IoT and robotics using Aggregate Programming and ROS2.
-	\item Working on \underline{PRIN and European projects}, using R\&D technology in specialized industry.
-	\item Co-authored peer-reviewed and conference publications on aggregate programming, coordination, and IoT/robotics (see Publications).
+	\item Nuova \underline{piattaforma} IoT/robotica con Programmazione aggregata e ROS2.
+	\item Partecipazione a \underline{progetti PRIN ed europei}, con tecnologie di R\&D in ambito industriale.
+	\item Co-autore di pubblicazioni \emph{peer-reviewed} e atti di convegno su programmazione aggregata, coordinamento e IoT/robotica (vedi Pubblicazioni).
 }}
-
 
 \cvevent
 {10/2021 -- 03/2023}
 {Solution Architect}
-{GFT Italia S.r.l. (Turin)}
-{Consulting activities in software architectural analysis and design of microservice-based solutions for insurance market clients.}
+{GFT Italia S.r.l. (Torino)}
+{Consulenza in analisi e progettazione architetturale di soluzioni \underline{basate su microservizi} per clienti del mercato assicurativo.}
 {\cvlist{
-	\item Technical reference and coordination of development teams.
-	\item Technical training and coaching activities for resources.
-	\item Design and coordination of the IT solution for the new core customer registry system for a lead insurance group.
+	\item Riferimento tecnico e coordinamento dei team di sviluppo.
+	\item Formazione tecnica e coaching alle risorse.
+	\item Progettazione e coordinamento della soluzione IT per la nuova anagrafica clienti core di un gruppo assicurativo leader.
 }}
 {\cvlist{
 	\item \underline{Java 11+}, \underline{Spring Boot}, \underline{Oracle}, Spring Cloud, Redis, DB2, MyBatis, Tomcat, IBM WebSphere, SQL, Gitlab, Maven, REST, IBM MQ, Apache Kafka.
 }}
 {\cvlist{
-	\item Managed and detailed complex systems for \underline{enterprise-level} projects.
-	\item \underline{Led} a team of 20+ members, with different roles and skill sets.
+	\item Gestione e dettaglio di sistemi complessi per progetti \underline{enterprise}.
+	\item \underline{Guida} di un team di oltre 20 persone, con ruoli e competenze diverse.
 }}
 
-%\vfill\null
 \cvevent
 {01/2017 -- 10/2021}
 {Senior Software Developer / Technical Leader}
-{Xeffe S.r.l. (Turin)}
-{Analysis, coordination, and development of Enterprise Solutions for the finance market.}
+{Xeffe S.r.l. (Torino)}
+{Analisi, coordinamento e sviluppo di soluzioni enterprise per il mercato finanziario.}
 {\cvlist{
-	\item Use of Domain Driven Design and Enterprise Integration Patterns.
-	\item Development and maintenance of projects for finance market.
-	\item Development and maintenance of proprietary frameworks based on Apache Camel and Play Framework.
+	\item Domain Driven Design e Enterprise Integration Patterns.
+	\item Sviluppo e manutenzione di progetti per il settore finanziario.
+	\item Sviluppo e manutenzione di framework proprietari su Apache Camel e Play Framework.
 }}
 {\cvlist{
 	\item \underline{Java 8+}, \underline{Scala}, \underline{JavaScript}, Spring, SQL, Apache Camel, Play Framework, Oracle, H2, MyBatis, GitHub, Ansible, Maven, nginx, SOAP, REST, jQuery, BeanIO, Quartz.
 }}
 {\cvlist{
-	\item High customer satisfaction in the design and implementation of \underline{customer-specific projects} using proprietary frameworks.
+	\item Elevata soddisfazione del cliente su progetti \underline{su misura} basati su framework proprietari.
 }}
 
-%\vfill\null
 \cvevent
 {06/2015 -- 01/2017}
 {Software Architect / Full Stack Developer}
-{Audacia S.r.l. (Turin)}
-{Coordination and development of an Intelligent Big Data Analysis system to extract significant information from heterogeneous data sources.}
+{Audacia S.r.l. (Torino)}
+{Coordinamento e sviluppo di un sistema di analisi intelligente di big data da fonti eterogenee.}
 {\cvlist{
-	\item Analysis and development of software solutions for insurance companies.
-	\item Maintenance of Java applications for finance market.
+	\item Analisi e sviluppo di soluzioni per compagnie assicurative.
+	\item Manutenzione di applicazioni Java per il mercato finanziario.
 }}
 {\cvlist{
 	\item \underline{Node.js}, \underline{Google Cloud Platform}, \underline{JavaScript}, \underline{ArangoDB}, Java, SQL, AQL, Loopback, Express, AngularJS, Oracle, GitHub, GIT, Grunt, Bower, NPM, Bootstrap.
 }}
 {\cvlist{
-	\item Implemented a \underline{draft solution} for Intelligent Big Data Analysis using \underline{cutting-edge} technologies.
+	\item \underline{Soluzione preliminare} per analisi intelligente di big data con tecnologie \underline{all'avanguardia}.
 }}
 
-%\vfill\null
 \cvevent
 {11/2014 -- 06/2015}
 {Software Engineer / IT Manager}
-{Creatiweb S.r.l. (Turin)}
-{Full-stack development of a proprietary booking engine for campsites and villages.}
+{Creatiweb S.r.l. (Torino)}
+{Sviluppo full-stack di un motore di prenotazione proprietario per campeggi e villaggi.}
 {\cvlist{
-	\item Development of WebServices to integrate the booking engine with accounting and channel manager software.
-	\item Implementation of new features of the booking engine application.
-	\item Performance analysis and tuning of company databases.
-	\item Manager of the server farm.
+	\item Sviluppo di WebService per integrare il motore con contabilità e channel manager.
+	\item Nuove funzionalità dell'applicazione di prenotazione.
+	\item Analisi e tuning dei database aziendali.
+	\item Gestione della server farm.
 }}
 {\cvlist{
-	\item \underline{Java}, \underline{SQL}, \underline{Linux}, \underline{JavaScript}, PHP, XSD, XML, CSS, HTML, SQL, Bash Script, Firebird DBMS, Tomcat, jQuery, XPath, XMLBeans, SOAP.
+	\item \underline{Java}, \underline{SQL}, \underline{Linux}, \underline{JavaScript}, PHP, XSD, XML, CSS, HTML, Bash Script, Firebird DBMS, Tomcat, jQuery, XPath, XMLBeans, SOAP.
 }}
 {\cvlist{
-	\item Served as the main point of contact for the IT department, supporting both internal and external clients.
+	\item Punto di contatto principale per il reparto IT, verso l'interno e l'esterno.
 }}
 
-%\vfill\null
 \cvevent
 {11/2011 -- 11/2014}
 {Software Engineer / Developer}
-{NaturalBooking S.r.l. (Turin)}
-{Development of the back-end of Hospes, a booking engine used by many campsites and villages in Italy.}
+{NaturalBooking S.r.l. (Torino)}
+{Sviluppo del back-end di Hospes, motore di prenotazione usato da molti campeggi e villaggi in Italia.}
 {\cvlist{
-	\item Development of SOAP WebServices to integrate the Booking Engine with accounting and channel manager software.
-	\item IT administration of servers hosting the application.
+	\item Sviluppo di WebService SOAP per integrazioni con contabilità e channel manager.
+	\item Amministrazione IT dei server che ospitano l'applicazione.
 }}
 {\cvlist{
 	\item \underline{Java}, \underline{Firebird DBMS}, JavaScript, SQL, XML, CSS, HTML, Bash Script, Tomcat, SOAP.
 }}
 {}
 
-%\vfill\null
 \cvevent
 {06/2011 -- 11/2011}
-{Analyst / Developer}
-{Prosa S.r.l. (Venice)}
-{Implementation of server-side and client-side features of the EmotiVending system, a vending machine equipped with a touch multimedia interface.}
+{Analista / Sviluppatore}
+{Prosa S.r.l. (Venezia)}
+{Sviluppo lato server e client del sistema EmotiVending, distributore automatico con interfaccia multimediale touch.}
 {\cvlist{
-	\item Analysis and development of the new VeBox system, a control center for vending machine controllers, in Java.
-	\item Development of an application for testing hardware of vending machines.
+	\item Analisi e sviluppo del sistema VeBox (centro di controllo per controller), in Java.
+	\item Applicazione per test dell'hardware dei distributori.
 }}
 {\cvlist{
 	\item \underline{C++}, \underline{Ruby}, Java, Linux, Tomcat, Java Swing, Restlet.
 }}
 {}
-
 
 % hotfixes to create fake-space to ensure the whole height is used
 \mbox{}
@@ -704,6 +692,6 @@ Alongside client work, I keep an active \textbf{research} thread in swarm intell
 \end{paracol}
 
 \vfill
-\noindent \emph{I authorize the processing of my personal data pursuant to Legislative Decree 196/2003 and the GDPR (EU Regulation 2016/679) for recruitment purposes.}
+\noindent \emph{Autorizzo il trattamento dei dati personali ai sensi del D.Lgs.\ 196/2003 e del GDPR (Regolamento UE 2016/679) per finalità di selezione del personale.}
 
 \end{document}
