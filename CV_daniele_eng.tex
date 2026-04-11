@@ -363,7 +363,8 @@
 %---------------------------------------------------------------------------------------
 %	META IMAGE
 %----------------------------------------------------------------------------------------
-\includegraphics[width=\linewidth]{profile.jpg}	%trimming relative to image size
+% Altezza massima: evita che la colonna competenze finisca in cima alla pagina 2.
+\includegraphics[width=\linewidth,height=0.26\textheight,keepaspectratio]{profile.jpg}
 
 %---------------------------------------------------------------------------------------
 %	CONTACT (sotto la foto: in cima alla colonna prima delle skill)
@@ -404,7 +405,6 @@
 \cvskill{Innovation} {10+ yrs} {0.9}
 \cvskill{Decision-making} {5+ yrs} {0.8}
 \cvskill{Communication} {2+ yrs} {0.8}
-\cvskill{Negotiation} {2+ yrs} {0.6}
 
 \vfill\null
 
